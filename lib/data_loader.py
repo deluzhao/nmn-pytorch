@@ -160,28 +160,28 @@ class VqaDataset(Dataset):
             for token_id in qtoken_ids
         ]
 
-        print "---------------------"
-        print 'question text actual:'
-        print question_text
-        print 'question text constructed'
-        print question_text_constructed
+        print("---------------------")
+        print('question text actual:')
+        print(question_text)
+        print('question text constructed')
+        print(question_text_constructed)
 
-        print 'image path:'
-        print self.image_feature_file % image_id
+        print('image path:')
+        print(self.image_feature_file % image_id)
 
-        print 'answer ids actual:'
-        print actual_answers_ids
-        print 'answer ids constructed:'
-        print constructed_answer_ids
+        print('answer ids actual:')
+        print(actual_answers_ids)
+        print('answer ids constructed:')
+        print(constructed_answer_ids)
 
-        print 'answers text actual:'
-        print answers_text
-        print 'answers text constructed:'
-        print constructed_answers_text
+        print('answers text actual:')
+        print(answers_text)
+        print('answers text constructed:')
+        print(constructed_answers_text)
 
-        print 'layout:'
-        print layout
-        print '---------------------'
+        print('layout:')
+        print(layout)
+        print('---------------------')
 
     @staticmethod
     def get_image_feature_mean_and_stds(question_file, image_feature_file,
@@ -195,7 +195,7 @@ class VqaDataset(Dataset):
             means, stdevs = pickle.load(open(saved_mean_stds_file, 'rb'))
             return [means, stdevs]
         else:
-            print 'precomputing data mean/stds for normalization'
+            print('precomputing data mean/stds for normalization')
             with open(question_file) as f:
                 questions_dict = json.load(f)['questions']
 
@@ -209,7 +209,7 @@ class VqaDataset(Dataset):
 
             filled_upto = 0
             for done, image_id in enumerate(image_ids):
-                if done % 1000 == 0: print done
+                if done % 1000 == 0: print(done)
                 image_feature_tensor = np.load(
                     open(image_feature_file % image_id))['arr_0']
                 for channel in range(image_feat_D):
