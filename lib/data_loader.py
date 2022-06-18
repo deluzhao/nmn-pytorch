@@ -1,5 +1,5 @@
 from torch.utils.data import Dataset, DataLoader
-import cPickle as pickle
+import pickle
 import torchvision.transforms as transforms
 import torch
 import json
