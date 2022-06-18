@@ -1,4 +1,4 @@
-import cPickle as pickle
+import pickle
 from torch.autograd import Variable
 import torch.nn.functional as F
 import torch
