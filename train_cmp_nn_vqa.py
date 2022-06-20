@@ -305,9 +305,9 @@ if __name__ == "__main__":
     ######## Set up (Starts) #########
 
     model_name = 'cmp_nn_vqa'
-    train_set = 'train2014-sub'
-    val_set = 'val2014-sub'
-    test_set = 'test2014-sub'
+    train_set = 'train2014'
+    val_set = 'val2014'
+    test_set = 'test2014'
 
     log_dir = os.path.join(root_dir, 'logs')
     logging.basicConfig(
